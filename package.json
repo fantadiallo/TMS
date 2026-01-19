@@ -1,0 +1,45 @@
+{
+  "name": "tms",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router-dom": "^7.12.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.1",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "sass": "^1.97.2",
+    "vite": "^7.2.4"
+  },
+  "description": "A simple company showcase website built with React and SCSS to present services, vehicles, and contact information.",
+  "main": "eslint.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fantadiallo/TMS.git"
+  },
+  "keywords": [
+    "company",
+    "profile"
+  ],
+  "author": "fatou jallow mboge",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fantadiallo/TMS/issues"
+  },
+  "homepage": "https://github.com/fantadiallo/TMS#readme"
+}

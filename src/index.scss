@@ -1,0 +1,8 @@
+@use "./variables" as *;
+
+body {
+  margin: 0;
+  background: $bg-main;
+  color: $text-main;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}

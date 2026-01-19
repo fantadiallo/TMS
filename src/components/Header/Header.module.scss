@@ -1,0 +1,87 @@
+@use "../../styles/variables" as *;
+
+.header {
+  background: $bg-surface;
+  border-bottom: 1px solid $border;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 64px;
+  gap: 12px;
+}
+
+/* Brand */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 900;
+  color: $text-main;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: $accent;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.name {
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+/* Nav */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav a {
+  font-weight: 700;
+  color: $text-main;
+  font-size: 0.95rem;
+}
+
+.active {
+  color: $accent;
+}
+
+/* CTA */
+.cta {
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: $accent;
+  color: #fff !important;
+}
+
+/* Mobile (small African phones) */
+@media (max-width: 640px) {
+  .name {
+    display: none;
+  }
+
+  .nav {
+    gap: 10px;
+  }
+
+  .nav a {
+    font-size: 0.9rem;
+  }
+}
+
+/* Very small phones (320px) */
+@media (max-width: 360px) {
+  .nav a:not(.cta) {
+    display: none;
+  }
+}

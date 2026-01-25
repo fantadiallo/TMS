@@ -1,0 +1,353 @@
+@use "../../styles/variables" as *;
+
+.section {
+  padding: clamp(28px, 5vw, 52px) 0;
+  background: $bg-soft;
+  color: $text-main;
+}
+
+.container {
+  width: min(1200px, 100% - 40px);
+  margin-inline: auto;
+}
+
+/* Top intro (NOT a card) */
+.header {
+  margin-bottom: clamp(14px, 2.4vw, 22px);
+  padding-bottom: clamp(10px, 2vw, 16px);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.10);
+}
+
+.header h1 {
+  margin: 0;
+  font-weight: 950;
+  letter-spacing: -0.03em;
+  font-size: clamp(1.9rem, 3.2vw, 2.4rem);
+  color: $text-main;
+}
+
+.header p {
+  margin: 10px 0 0;
+  max-width: 75ch;
+  line-height: 1.85;
+  color: $text-muted;
+  font-weight: 700;
+}
+
+/* Main layout */
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(14px, 2.5vw, 20px);
+  align-items: start;
+}
+
+/* ===== FORM (white surface, serious) ===== */
+.form {
+  background: $bg-surface;
+  border: 1px solid $border;
+  border-radius: $radius-xl;
+  box-shadow: $shadow-md;
+  padding: clamp(14px, 2.4vw, 20px);
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1 1 240px;
+  min-width: 0;
+}
+
+.field label {
+  font-weight: 900;
+  color: $text-main;
+  font-size: 0.92rem;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 11px 12px;
+  border-radius: $radius-md;
+  border: 1px solid rgba(15, 23, 42, 0.16);
+  background: #fff;
+  color: $text-main;
+  outline: none;
+  transition: border-color 140ms ease, box-shadow 140ms ease;
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.field input:focus,
+.field textarea:focus {
+  border-color: rgba($color-10, 0.55);
+  box-shadow: 0 0 0 6px rgba($color-10, 0.14);
+}
+
+/* When aria-invalid is true */
+.field input[aria-invalid="true"],
+.field textarea[aria-invalid="true"] {
+  border-color: rgba(239, 68, 68, 0.55);
+  box-shadow: 0 0 0 6px rgba(239, 68, 68, 0.10);
+}
+
+.err {
+  font-size: 0.9rem;
+  font-weight: 750;
+  color: rgba(185, 28, 28, 0.95);
+}
+
+/* Status banner */
+.status {
+  margin-top: 12px;
+  border-radius: $radius-md;
+  padding: 10px 12px;
+  font-weight: 850;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+}
+
+.ok {
+  background: rgba(22, 163, 74, 0.08);
+  border-color: rgba(22, 163, 74, 0.20);
+  color: rgba(15, 80, 40, 1);
+}
+
+.bad {
+  background: rgba(239, 68, 68, 0.08);
+  border-color: rgba(239, 68, 68, 0.20);
+  color: rgba(120, 18, 18, 1);
+}
+
+.wait {
+  background: rgba($color-10, 0.10);
+  border-color: rgba($color-10, 0.22);
+  color: $text-main;
+}
+
+/* Submit button (gold) */
+.btn {
+  width: 100%;
+  margin-top: 12px;
+
+  height: 46px;
+  border-radius: 14px;
+  border: 1px solid rgba($color-10, 0.78);
+
+  background: $color-10;
+  color: #0b1220;
+
+  font-weight: 950;
+  letter-spacing: 0.01em;
+
+  box-shadow: 0 14px 34px rgba(2, 6, 23, 0.20);
+  transition: transform 160ms ease, filter 160ms ease, box-shadow 160ms ease;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.02);
+  box-shadow: 0 18px 44px rgba(2, 6, 23, 0.26);
+}
+
+.btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Small helper text outside the button */
+.note {
+  margin-top: 10px;
+  color: $text-muted;
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+/* ===== ASIDE (navy panels, premium) ===== */
+.aside {
+  display: grid;
+  gap: 12px;
+}
+
+.card {
+  background: $bg-main;
+  color: $text-on-dark;
+  border-radius: $radius-xl;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 28px 70px rgba(2, 6, 23, 0.28);
+  padding: clamp(14px, 2.2vw, 18px);
+}
+
+.card h2,
+.card h3 {
+  margin: 0;
+  font-weight: 950;
+  letter-spacing: -0.02em;
+  color: rgba(255, 255, 255, 0.96);
+}
+
+.card h2 {
+  font-size: 1.25rem;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+}
+
+/* top row in first card */
+.cardTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  height: 28px;
+  padding: 0 10px;
+  border-radius: 999px;
+  font-weight: 950;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: rgba(255, 255, 255, 0.92);
+  background: rgba($color-10, 0.12);
+  border: 1px solid rgba($color-10, 0.22);
+  margin-bottom: 8px;
+}
+
+.pill {
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 999px;
+
+  font-weight: 900;
+  font-size: 0.82rem;
+
+  color: rgba(255, 255, 255, 0.90);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* WhatsApp list */
+.stack {
+  display: grid;
+  gap: 10px;
+}
+
+.wa {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 6px 10px;
+
+  text-decoration: none;
+  border-radius: $radius-lg;
+  padding: 12px;
+
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  transition: border-color 160ms ease, background 160ms ease;
+}
+
+.wa:hover {
+  border-color: rgba($color-10, 0.28);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.waTitle {
+  font-weight: 950;
+  color: rgba(255, 255, 255, 0.94);
+}
+
+.waNumber {
+  font-weight: 850;
+  color: rgba(255, 255, 255, 0.84);
+  justify-self: end;
+}
+
+.waHint {
+  grid-column: 1 / -1;
+  color: rgba(255, 255, 255, 0.70);
+  font-weight: 750;
+  font-size: 0.92rem;
+}
+
+/* Contact details block */
+.detail {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.10);
+  display: grid;
+  gap: 8px;
+}
+
+.dLabel {
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.70);
+  font-size: 0.92rem;
+}
+
+.dValue {
+  font-weight: 850;
+  color: rgba(255, 255, 255, 0.90);
+  overflow-wrap: anywhere;
+}
+
+.dValue a {
+  color: rgba(255, 255, 255, 0.92);
+  text-decoration: none;
+  border-bottom: 1px solid rgba($color-10, 0.30);
+  padding-bottom: 2px;
+}
+
+.dValue a:hover {
+  border-bottom-color: rgba($color-10, 0.80);
+}
+
+.sep {
+  opacity: 0.55;
+  margin: 0 8px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 980px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .field {
+    flex: 1 1 auto;
+  }
+}
+.intro {
+  margin: 12px 0 0;
+  color: $text-muted;
+  font-weight: 750;
+  line-height: 1.75;
+  max-width: 85ch;
+}

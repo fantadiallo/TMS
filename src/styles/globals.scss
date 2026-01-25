@@ -4,7 +4,7 @@
   --container: 1200px;
   --gutter: clamp(12px, 3vw, 32px);
   --radius: 16px;
-  --shadow: 0 10px 22px rgba(2, 6, 23, 0.08);
+  --shadow: 0 12px 26px rgba(2, 6, 23, 0.08);
 }
 
 *,
@@ -20,7 +20,7 @@ html {
 
 body {
   margin: 0;
-  background: $bg-main;
+  background: $bg-soft;
   color: $text-main;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
   line-height: 1.6;
@@ -33,14 +33,16 @@ img {
 }
 
 a {
-  color: $accent;
+  color: $color-10;
   text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
+  text-decoration-color: rgba($color-10, 0.85);
 }
 
+/* Layout helpers */
 .container {
   width: min(100% - (var(--gutter) * 2), var(--container));
   margin-inline: auto;
@@ -55,6 +57,7 @@ a:hover {
   gap: 12px;
 }
 
+/* Generic cards */
 .card {
   background: $bg-surface;
   border: 1px solid $border;
@@ -63,27 +66,42 @@ a:hover {
   padding: clamp(12px, 2.2vw, 18px);
 }
 
+.cardLight {
+  background: $bg-surface;
+  border: 1px solid $border;
+  color: $text-main;
+  box-shadow: var(--shadow);
+}
+
+.cardLight p {
+  color: $text-muted;
+}
+
+/* Typography */
 h1 {
   margin: 0;
-  font-weight: 900;
+  font-weight: 950;
   letter-spacing: -0.02em;
   line-height: 1.08;
   font-size: clamp(1.65rem, 5vw, 3rem);
+  color: $text-main;
 }
 
 h2 {
   margin: 0;
-  font-weight: 850;
+  font-weight: 900;
   letter-spacing: -0.015em;
   line-height: 1.15;
   font-size: clamp(1.3rem, 3.2vw, 2rem);
+  color: $text-main;
 }
 
 h3 {
   margin: 0;
-  font-weight: 850;
+  font-weight: 900;
   line-height: 1.22;
   font-size: clamp(1.1rem, 2.4vw, 1.4rem);
+  color: $text-main;
 }
 
 p {
@@ -97,49 +115,75 @@ p {
   font-size: clamp(1rem, 1.4vw, 1.15rem);
   line-height: 1.9;
   max-width: 70ch;
+  color: $text-muted;
 }
 
+/* Buttons */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
+
   padding: 12px 14px;
   border-radius: 14px;
   border: 1px solid transparent;
-  font-weight: 850;
+
+  font-weight: 950;
   cursor: pointer;
-  transition: transform 0.12s ease, background 0.12s ease, border-color 0.12s ease;
   user-select: none;
+
+  transition: transform 0.12s ease, background 0.12s ease, border-color 0.12s ease, filter 0.12s ease,
+    box-shadow 0.12s ease;
 }
 
 .btn:active {
   transform: translateY(1px);
 }
 
+/* Primary = gold (more enterprise / procurement vibe) */
 .btn-primary {
-  background: $accent;
-  color: #ffffff;
+  background: $color-10;
+  border-color: rgba($color-10, 0.75);
+  color: #0b1220;
+  box-shadow: 0 14px 34px rgba(2, 6, 23, 0.14);
 }
 
+.btn-primary:hover {
+  filter: brightness(1.02);
+  box-shadow: 0 18px 44px rgba(2, 6, 23, 0.18);
+}
+
+/* Outline = clean + serious */
 .btn-outline {
   background: $bg-surface;
   border-color: $border;
   color: $text-main;
 }
 
+.btn-outline:hover {
+  background: rgba($color-10, 0.08);
+  border-color: rgba($color-10, 0.22);
+}
+
+/* Badge = gold accent, not blue */
 .badge {
   display: inline-flex;
   align-items: center;
   padding: 6px 10px;
   border-radius: 999px;
-  font-weight: 800;
-  font-size: 0.88rem;
-  background: rgba(31, 79, 216, 0.08);
-  color: $accent;
-  border: 1px solid rgba(31, 79, 216, 0.16);
+
+  font-weight: 950;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  background: rgba($color-10, 0.12);
+  color: $text-main;
+  border: 1px solid rgba($color-10, 0.22);
 }
 
+/* Simple grids */
 .grid-2,
 .grid-3 {
   display: grid;
@@ -163,7 +207,6 @@ p {
   }
 }
 
-/* Tiny phone safety: 320px widths */
 @media (max-width: 360px) {
   :root {
     --gutter: 12px;

@@ -1,7 +1,48 @@
-$bg-main: #f7f9fc;        // 60%
-$bg-surface: #ffffff;    // 30%
-$accent: #1f4fd8;         // 10%
+/* =========================
+   CORE BRAND COLORS
+   ========================= */
 
+/* 60% — Authority (navy) */
+$color-60: #0b1220;
+
+/* 30% — Surface (white) */
+$color-30: #ffffff;
+
+/* 10% — Accent (gold) */
+$color-10: #d4af37;
+
+
+
+$text-on-dark: rgba(255, 255, 255, 0.92);
 $text-main: #0f172a;
 $text-muted: #475569;
-$border: #e5e7eb;
+
+
+/* =========================
+   BACKGROUNDS
+   ========================= */
+
+$bg-main: $color-60;
+$bg-surface: $color-30;
+$bg-soft: #f5f7fb;
+
+
+
+
+$border: rgba(15, 23, 42, 0.12);
+
+$shadow-md: 0 10px 26px rgba(2, 6, 23, 0.08);
+$shadow-lg: 0 18px 50px rgba(2, 6, 23, 0.10);
+
+
+
+
+$success: #16a34a;
+$warning: #f59e0b;
+$error: #ef4444;
+
+
+
+$radius-md: 12px;
+$radius-lg: 16px;
+$radius-xl: 22px;

@@ -1,87 +1,183 @@
 @use "../../styles/variables" as *;
 
 .header {
-  background: $bg-surface;
-  border-bottom: 1px solid $border;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+  background: rgba(11, 18, 32, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
 }
 
 .inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 64px;
-  gap: 12px;
+
+  min-height: clamp(60px, 6.5vw, 78px);
+  gap: clamp(10px, 2vw, 18px);
+  padding-block: clamp(10px, 1.6vw, 14px);
 }
 
-/* Brand */
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  font-weight: 900;
-  color: $text-main;
+  gap: 12px;
+
+  color: $text-on-dark;
+  text-decoration: none;
+
+  min-width: 180px;
+  max-width: 420px;
+}
+
+.brand:focus-visible {
+  outline: 3px solid rgba(212, 175, 55, 0.35);
+  outline-offset: 4px;
+  border-radius: 14px;
 }
 
 .logo {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  background: $accent;
-  color: #fff;
-  font-size: 0.9rem;
+  height: clamp(34px, 4.8vw, 52px);
+  width: auto;
+  object-fit: contain;
 }
 
-.name {
-  font-size: 1rem;
+.brandText {
+  display: grid;
+  line-height: 1.1;
+  min-width: 0;
+}
+
+.brandTitle {
+  font-weight: 950;
+  letter-spacing: -0.02em;
+  font-size: clamp(1rem, 1.8vw, 1.18rem);
+
+  color: $text-on-dark;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-/* Nav */
+.brandSub {
+  font-weight: 750;
+  font-size: clamp(0.88rem, 1.2vw, 1rem);
+
+  color: rgba(255, 255, 255, 0.72);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .nav {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: clamp(8px, 1.8vw, 18px);
+  min-width: 0;
 }
 
-.nav a {
-  font-weight: 700;
-  color: $text-main;
-  font-size: 0.95rem;
+.link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: $text-on-dark;
+  text-decoration: none;
+  font-weight: 850;
+  font-size: clamp(0.9rem, 1vw, 0.98rem);
+
+  padding: 10px 12px;
+  border-radius: 999px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+
+  transition: background 0.14s ease, border-color 0.14s ease, transform 0.14s ease, color 0.14s ease;
+}
+
+.link:hover {
+  background: rgba(212, 175, 55, 0.10);
+  border-color: rgba(212, 175, 55, 0.35);
+  color: $text-on-dark;
+  transform: translateY(-1px);
+  text-decoration: none;
 }
 
 .active {
-  color: $accent;
+  background: rgba(212, 175, 55, 0.14);
+  border-color: rgba(212, 175, 55, 0.45);
 }
 
-/* CTA */
 .cta {
-  padding: 8px 12px;
-  border-radius: 10px;
-  background: $accent;
-  color: #fff !important;
+  background: $color-10;
+  border-color: rgba(212, 175, 55, 0.65);
+  color: #0b1220;
+
+  padding: 10px 14px;
+  font-weight: 950;
 }
 
-/* Mobile (small African phones) */
-@media (max-width: 640px) {
-  .name {
-    display: none;
+.cta:hover {
+  background: rgba(212, 175, 55, 0.92);
+  border-color: rgba(212, 175, 55, 0.92);
+}
+
+/* Tablet & down */
+@media (max-width: 900px) {
+  .brand {
+    min-width: 0;
+    max-width: 320px;
   }
 
   .nav {
     gap: 10px;
   }
+}
 
-  .nav a {
-    font-size: 0.9rem;
+/* Mobile */
+@media (max-width: 640px) {
+  .inner {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 64px;
+  }
+
+  .brandSub {
+    display: none;
+  }
+
+  .nav {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 10px;
+    padding-bottom: 6px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .link {
+    white-space: nowrap;
+    padding: 9px 11px;
   }
 }
 
-/* Very small phones (320px) */
-@media (max-width: 360px) {
-  .nav a:not(.cta) {
-    display: none;
+/* Very small phones */
+@media (max-width: 420px) {
+  .brandTitle {
+    font-size: 0.98rem;
+  }
+
+  .logo {
+    height: 34px;
   }
 }

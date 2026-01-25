@@ -6,22 +6,34 @@ export default function Header() {
     <header className={styles.header}>
       <div className="container">
         <div className={styles.inner}>
-          <NavLink to="/" className={styles.brand}>
-            <span className={styles.logo}>TMS</span>
-            <span className={styles.name}>General Enterprise</span>
+          <NavLink to="/" className={styles.brand} aria-label="TMS General Enterprise home">
+            <img
+              src="/TMSLogo.png"
+              alt="TMS General Enterprise logo"
+              className={styles.logo}
+            />
+            <span className={styles.brandText}>
+              <span className={styles.brandTitle}>TMS</span>
+              <span className={styles.brandSub}>General Enterprise</span>
+            </span>
           </NavLink>
 
-          <nav className={styles.nav}>
-            <NavLink to="/" className={({ isActive }) => isActive ? styles.active : ""}>
-              Home
-            </NavLink>
-            <NavLink to="/vehicles" className={({ isActive }) => isActive ? styles.active : ""}>
+          <nav className={styles.nav} aria-label="Primary">
+         <NavLink
+  to="/"
+  end
+  className={styles.link}
+>
+  Home
+</NavLink>
+
+            <NavLink to="/vehicles" className={({ isActive }) => `${styles.link} ${isActive ? styles.active : ""}`}>
               Vehicles
             </NavLink>
-            <NavLink to="/about" className={({ isActive }) => isActive ? styles.active : ""}>
+            <NavLink to="/about" className={({ isActive }) => `${styles.link} ${isActive ? styles.active : ""}`}>
               About
             </NavLink>
-            <NavLink to="/contact" className={styles.cta}>
+            <NavLink to="/contact" className={`${styles.link} ${styles.cta}`}>
               Contact
             </NavLink>
           </nav>

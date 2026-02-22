@@ -21,7 +21,7 @@ export const products = [
     name: "Toyota LC 76/78/79/70",
     years: "2023–2026",
     type: "SUV",
-    image: "/Toyota LC_2023-2026.jpeg",
+    image: "/ToyotaLC_2023-2026.jpeg",
   },
   {
     id: "hilux",
@@ -29,7 +29,7 @@ export const products = [
     name: "Toyota Hilux",
     years: "2023–2026",
     type: "Pickup",
-    image: "/Toyotahilux.jpeg",
+    image: "/Toyota-hilux.jpeg",
   },
   {
     id: "rav4",

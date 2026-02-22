@@ -8,7 +8,7 @@ export default function Header() {
         <div className={styles.inner}>
           <NavLink to="/" className={styles.brand} aria-label="TMS General Enterprise home">
             <img
-              src="/TMSLogo.png"
+              src="/TMS1.png"
               alt="TMS General Enterprise logo"
               className={styles.logo}
             />

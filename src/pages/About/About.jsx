@@ -1,4 +1,5 @@
 import styles from "./AboutPage.module.scss";
+import { Link } from "react-router-dom";
 
 export default function AboutPage() {
   return (
@@ -14,12 +15,12 @@ export default function AboutPage() {
             </p>
 
             <div className={styles.ctaRow}>
-              <a className={styles.primaryBtn} href="/contact">
+              <Link className={styles.primaryBtn} to="/contact">
                 Contact us
-              </a>
-              <a className={styles.secondaryBtn} href="/vehicles">
+              </Link>
+              <Link className={styles.secondaryBtn} to="/vehicles">
                 View vehicles
-              </a>
+              </Link>
             </div>
 
             <div className={styles.quickGrid}>
@@ -134,9 +135,9 @@ export default function AboutPage() {
                   <span className={styles.contactLabel}>Phone</span>
                   <span className={styles.contactValue}>+220 307 4959 • +220 750 0005</span>
                 </div>
-                <a className={styles.primaryBtn} href="/contact">
+                <link to="/contact" className={styles.primaryBtn}>
                   Go to Contact page
-                </a>
+                </link>
               </div>
             </div>
           </div>

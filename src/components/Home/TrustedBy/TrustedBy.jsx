@@ -4,14 +4,17 @@ export default function TrustedBy() {
     "Ministry of Agriculture",
     "Ministry of Health",
     "EU Commission",
-    "Gambia Government"
+    "Gambia Government",
+    "Zenith Bank"
   ];
 
   return (
     <section className="section">
       <div className="container stack">
-        <h2>Trusted by Institutions</h2>
-        <p className="lead">We supply vehicles to institutions and businesses across the region.</p>
+        <h2>Our Customers</h2>
+        <p className="lead">
+          Institutions and businesses across the region trust us for reliable vehicle supply.
+        </p>
 
         <div className="grid-3">
           {clients.map((c) => (
@@ -22,14 +25,31 @@ export default function TrustedBy() {
         </div>
 
         <div className="card">
-          <div style={{ display: "flex", justifyContent: "space-between", gap: 12, flexWrap: "wrap", alignItems: "center" }}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              gap: 12,
+              flexWrap: "wrap",
+              alignItems: "center"
+            }}
+          >
             <div>
               <h3 style={{ margin: 0 }}>Need a quote?</h3>
-              <p style={{ marginTop: 6 }}>Tell us the model and year range — we’ll confirm availability.</p>
+              <p style={{ marginTop: 6 }}>
+                Tell us the model and year range — we’ll confirm availability.
+              </p>
             </div>
             <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-              <a className="btn btn-primary" href="/contact">Contact</a>
-              <a className="btn btn-outline" href="https://wa.me/2203074959" target="_blank" rel="noreferrer">
+              <a className="btn btn-primary" href="/contact">
+                Contact
+              </a>
+              <a
+                className="btn btn-outline"
+                href="https://wa.me/2203074959"
+                target="_blank"
+                rel="noreferrer"
+              >
                 WhatsApp
               </a>
             </div>

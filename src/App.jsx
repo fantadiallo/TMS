@@ -1,10 +1,9 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Layout from "./components/Layout/Layout";
-import AboutPage from "./pages/About/About";
 import VehiclesPage from "./pages/Vehicles/Vehicles";
 import ContactPage from "./pages/Contact/Contact";
-
+import AboutPage from "./pages/About/About";
 
 export default function App() {
   return (

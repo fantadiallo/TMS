@@ -72,7 +72,7 @@ export default function Footer() {
 
         <div className={styles.bottom}>
           <span>© {year} TMS General Enterprise</span>
-          <span className={styles.credit}>Built by FatoMbodj</span>
+          <span className={styles.credit}>Built by waloweb</span>
         </div>
       </div>
     </footer>

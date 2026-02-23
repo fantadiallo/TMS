@@ -43,13 +43,12 @@ export default function AboutPage() {
             <div className={styles.imageFrame} aria-label="Company image placeholder">
               <img
                 className={styles.image}
-                src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=1400&q=70"
+                src="/ToyotaLC_2023-2026.jpeg"
                 alt="Vehicle showroom placeholder"
                 loading="lazy"
                 decoding="async"
               />
               <div className={styles.imageOverlay} />
-              <div className={styles.imageBadge}>Placeholder image</div>
             </div>
 
             <div className={styles.miniCards}>
@@ -73,30 +72,36 @@ export default function AboutPage() {
       <section className={styles.section}>
         <div className={styles.sectionInner}>
           <div className={styles.sectionTitle}>
-            <h2>What we do</h2>
+            <h2>Our History</h2>
             <p>
-              We supply vehicles for personal use, businesses, and fleet needs — with support across selection,
-              documentation, and delivery coordination.
+              TMS General Enterprise has been in the supply of motor vehicles for over 25 years under our
+              sub-company <strong>OSA Motors</strong>. We have supplied vehicles and equipment to institutions
+              across The Gambia and the wider region.
             </p>
           </div>
 
           <div className={styles.featureGrid}>
             <article className={styles.feature}>
-              <h3>Vehicle sourcing</h3>
+              <h3>Authorized dealership experience</h3>
               <p>
-                Tell us your budget and requirements. We recommend options and help you choose the right fit.
+                We were once authorized dealers for Land Rover, Mercedes-Benz, and Massey Ferguson — supplying
+                cars, trucks, and tractors to the Government and major projects within The Gambia.
               </p>
             </article>
+
             <article className={styles.feature}>
-              <h3>Inspection & assurance</h3>
+              <h3>Regional track record</h3>
               <p>
-                We prioritize quality checks and clear communication so you know exactly what you’re getting.
+                Over the last 25 years, we’ve supplied over 1,000 vehicles mainly in The Gambia, and also in
+                neighboring countries including Senegal and Guinea-Bissau.
               </p>
             </article>
+
             <article className={styles.feature}>
-              <h3>Delivery support</h3>
+              <h3>Global partnerships</h3>
               <p>
-                From planning to handover, we help coordinate the process for a smooth, reliable delivery.
+                We have strong partners and suppliers within Europe and the Middle East, supporting reliable sourcing
+                and competitive pricing across a wide range of makes and models.
               </p>
             </article>
           </div>
@@ -109,8 +114,8 @@ export default function AboutPage() {
             <div className={styles.splitCard}>
               <h2>Our promise</h2>
               <p>
-                We build long-term trust through transparency, responsiveness, and consistent delivery.
-                If something isn’t clear, we explain it — simply and directly.
+                We build long-term trust through transparency, responsiveness, and consistent delivery. If something
+                isn’t clear, we explain it — simply and directly.
               </p>
 
               <ul className={styles.list}>
@@ -118,13 +123,20 @@ export default function AboutPage() {
                 <li>Realistic timelines and updates</li>
                 <li>Customer-first support</li>
               </ul>
+
+              <div className={styles.ctaRow}>
+                <Link className={styles.primaryBtn} to="/contact">
+                  Request a quote
+                </Link>
+                <Link className={styles.secondaryBtn} to="/vehicles">
+                  Browse vehicles
+                </Link>
+              </div>
             </div>
 
             <div className={styles.splitCardAlt}>
               <h2>Let’s talk</h2>
-              <p>
-                Have a vehicle in mind? Send an inquiry and we’ll come back with options and next steps.
-              </p>
+              <p>Have a vehicle in mind? Send an inquiry and we’ll come back with options and next steps.</p>
 
               <div className={styles.contactBox}>
                 <div className={styles.contactRow}>
@@ -135,9 +147,10 @@ export default function AboutPage() {
                   <span className={styles.contactLabel}>Phone</span>
                   <span className={styles.contactValue}>+220 307 4959 • +220 750 0005</span>
                 </div>
-                <link to="/contact" className={styles.primaryBtn}>
+
+                <Link to="/contact" className={styles.primaryBtn}>
                   Go to Contact page
-                </link>
+                </Link>
               </div>
             </div>
           </div>

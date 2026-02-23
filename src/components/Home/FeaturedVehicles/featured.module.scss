@@ -1,0 +1,26 @@
+.Vbtn {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.9rem 1.8rem;
+
+  background: #0f2b46; // deep navy corporate
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+
+  &:hover {
+    background: transparent;
+    color: #0f2b46;
+    border: 2px solid #0f2b46;
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+}

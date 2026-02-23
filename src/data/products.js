@@ -8,6 +8,15 @@ export const products = [
     image: "/Toyotafortuner2023-2026.jpeg",
   },
   {
+     id: "Tuscson",
+    brand: "Hyundai",
+    name: "Hyundai Tuscson",
+    years: "2023-2026",
+    type: "SUV",
+    image: "/HyundaiTucson.jpeg"
+  },
+
+  {
     id: "l200",
     brand: "Mitsubishi",
     name: "Mitsubishi L200",
